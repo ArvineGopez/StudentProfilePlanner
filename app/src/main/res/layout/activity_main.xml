@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.pbuskell.studentprofileplanner.MainActivity"
+    android:background="#40bff6">
+
+    <Button
+        android:layout_width="400dp"
+        android:layout_height="250dp"
+        android:text="Login"
+        android:id="@+id/btnClickedLogin"
+        android:background="@drawable/pencil"
+        android:textColor="#000000"
+        android:onClick="loginOnClick"
+        android:textSize="50dp"
+        android:textColorHighlight="#62f5ee"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="400dp"
+        android:layout_height="250dp"
+        android:text="Sign Up"
+        android:id="@+id/btnSignUp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textSize="60dp"
+        android:background="@android:color/transparent"
+        android:layout_above="@+id/btnClickedLogin"
+        android:nestedScrollingEnabled="false"
+        android:onClick="signUpOnClick" />
+
+</RelativeLayout>
