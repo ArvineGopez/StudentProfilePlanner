@@ -9,7 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.pbuskell.studentprofileplanner.SignUp"
     android:background="#7cf095"
-    android:onClick="btnSignUpToLogin">
+    android:onClick="insertData">
 
     <TextView
         android:layout_width="wrap_content"
@@ -49,8 +49,8 @@
         android:id="@+id/edtTxtEmail"
         android:hint="Email :"
         android:layout_below="@+id/edtTxtUsername"
-        android:layout_alignLeft="@+id/edtTxtUsername"
-        android:layout_alignStart="@+id/edtTxtUsername" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="60dp"
