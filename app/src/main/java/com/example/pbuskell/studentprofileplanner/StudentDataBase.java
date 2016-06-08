@@ -14,24 +14,25 @@ public class StudentDataBase extends SQLiteOpenHelper {
 
 
     public StudentDataBase(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+        super(context, DB_NAME, null, DB_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        updateMyDatabase(db, 0, DB_VERSION);
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        updateMyDatabase(db, oldVersion, newVersion);
 
     }
     private void updateMyDatabase(SQLiteDatabase db, int oldVersion, int newVersion){
         db.execSQL("CREATE TABLE STUDENT (_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "USERNAME TEXT, " +
                 "EMAIL TEXT, " +
-                "PASSWORD, " +
-                "WAGE REAL);");
+                "PASSWORD TEXT);");
     }
 
     public void insertElement(SQLiteDatabase db, ContentValues newContent){

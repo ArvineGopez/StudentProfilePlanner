@@ -37,11 +37,12 @@ public class SignUp extends AppCompatActivity {
         String studentPassword;
         SQLiteDatabase db =null;
         ContentValues studentValues = new ContentValues();
-        SQLiteOpenHelper StudentDataBase = new StudentDataBase(this, null, null, 0);
-        try {
-            db = StudentDataBase.getWritableDatabase();
+        Intent SignUp = new Intent(this, Login.class);
+        StudentDataBase studentDataBase = new StudentDataBase(this, null, null, 0);
 
-            Intent SignUp = new Intent(this, Login.class);
+        try {
+            db = studentDataBase.getWritableDatabase();
+
             if (edtTxtUsername.getText().length() == 0 || edtTxtEmail.getText().length() == 0
                     || edtTxtPassword.getText().length() == 0) {
                 txtvwError.setText("YOU MUST FILL IN ALL THE INFORMATION!!!");
@@ -59,18 +60,20 @@ public class SignUp extends AppCompatActivity {
                  * 3. Call the StudentDataBase insertElement method
                  * 4.Display that the element has been added successfully
                  */
+            txtvwSuccessSignUp.setText("YOU HAVE SUCCESSFULLY SIGNED UP!!");
 
 
-                txtvwSuccessSignUp.setText("YOU HAVE SUCCESFULLY SIGNED UP!!!!");
-                startActivityForResult(SignUp, 0);
+
+
+
 
             }
             db.close();
         } catch (SQLiteException e) {
-            txtvwError.setText("The database was not found");
+
 
         }
-
+        startActivityForResult(SignUp, 0);
     }
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         edtTxtEmail.setText("");
