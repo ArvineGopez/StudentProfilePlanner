@@ -27,7 +27,6 @@ public class SignUp extends AppCompatActivity {
         edtTxtEmail = (EditText) findViewById(R.id.edtTxtEmail);
         edtTxtPassword = (EditText) findViewById(R.id.edtTxtPassword);
         txtvwError = (TextView) findViewById(R.id.txtvwError);
-        txtvwSuccessSignUp = (TextView) findViewById(R.id.txtvwSuccessSignUp);
 
     }
 
@@ -45,7 +44,9 @@ public class SignUp extends AppCompatActivity {
 
             if (edtTxtUsername.getText().length() == 0 || edtTxtEmail.getText().length() == 0
                     || edtTxtPassword.getText().length() == 0) {
+
                 txtvwError.setText("YOU MUST FILL IN ALL THE INFORMATION!!!");
+
             } else {
 
                 studentEmail=edtTxtEmail.getText().toString();
@@ -61,12 +62,6 @@ public class SignUp extends AppCompatActivity {
                  * 4.Display that the element has been added successfully
                  */
             txtvwSuccessSignUp.setText("YOU HAVE SUCCESSFULLY SIGNED UP!!");
-
-
-
-
-
-
             }
             db.close();
         } catch (SQLiteException e) {
