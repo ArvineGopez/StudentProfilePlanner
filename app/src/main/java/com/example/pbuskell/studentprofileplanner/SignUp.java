@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -16,6 +17,7 @@ public class SignUp extends AppCompatActivity {
     private EditText edtTxtEmail;
     private EditText edtTxtPassword;
     private TextView txtvwError;
+    private Button btnLogIn;
     private TextView txtvwSuccessSignUp;
 
 
@@ -27,16 +29,16 @@ public class SignUp extends AppCompatActivity {
         edtTxtEmail = (EditText) findViewById(R.id.edtTxtEmail);
         edtTxtPassword = (EditText) findViewById(R.id.edtTxtPassword);
         txtvwError = (TextView) findViewById(R.id.txtvwError);
+        btnLogIn = (Button) findViewById(R.id.btnLogIn);
 
     }
 
-    public void insertData(View view) {
+    public void insertData(View vw) {
         String studentUserName;
         String studentEmail;
         String studentPassword;
-        SQLiteDatabase db =null;
+        SQLiteDatabase db;
         ContentValues studentValues = new ContentValues();
-        Intent SignUp = new Intent(this, Login.class);
         StudentDataBase studentDataBase = new StudentDataBase(this, null, null, 0);
 
         try {
@@ -61,14 +63,23 @@ public class SignUp extends AppCompatActivity {
                  * 3. Call the StudentDataBase insertElement method
                  * 4.Display that the element has been added successfully
                  */
-            txtvwSuccessSignUp.setText("YOU HAVE SUCCESSFULLY SIGNED UP!!");
+                txtvwError.setText("YOU HAVE SUCCESSFULLY SIGNED UP!!");
+
+
+
             }
             db.close();
         } catch (SQLiteException e) {
-
-
+            txtvwError.setText("The database was not found");
         }
-        startActivityForResult(SignUp, 0);
+
+        btnLogIn.setVisibility(View.VISIBLE);
+
+    }
+
+    public void gotoLogIn (View vw){
+        Intent SignUp = new Intent(this, Login.class);
+        startActivity(SignUp);
     }
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         edtTxtEmail.setText("");

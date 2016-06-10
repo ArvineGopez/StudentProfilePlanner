@@ -53,19 +53,17 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:layout_width="60dp"
-        android:layout_height="150dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Sign Up"
         android:id="@+id/btnSignUpToLogin"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:background="@android:color/transparent"
-        android:layout_alignParentBottom="true"
-        android:textSize="60dp"
+        android:textSize="25dp"
         android:nestedScrollingEnabled="false"
-        android:onClick="btnSignUpToLogin" />
+        android:onClick="insertData"
+        android:layout_marginBottom="44dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -76,5 +74,18 @@
         android:textIsSelectable="false"
         android:layout_below="@+id/edtTxtPassword"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log In"
+        android:id="@+id/btnLogIn"
+        android:background="@android:color/transparent"
+        android:textSize="25dp"
+        android:nestedScrollingEnabled="false"
+        android:onClick="gotoLogIn"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible" />
 
 </RelativeLayout>
