@@ -17,7 +17,7 @@
         </activity>
         <activity android:name=".Login" />
         <activity android:name=".SignUp" />
-        <activity android:name=".test.StudentPlan"></activity>
+        <activity android:name=".studentPlanner"></activity>
     </application>
 
 </manifest>

@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/edtTxtPassword"
+        android:id="@+id/edtxtPassword"
         android:hint="Password :"
         android:layout_below="@+id/edtTxtEmail"
         android:layout_alignLeft="@+id/edtTxtEmail"
@@ -60,10 +60,10 @@
         android:background="@android:color/transparent"
         android:textSize="25dp"
         android:nestedScrollingEnabled="false"
-        android:onClick="insertData"
         android:layout_marginBottom="44dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="gotoLogIn" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -72,20 +72,7 @@
         android:layout_marginTop="27dp"
         android:textSize="35dp"
         android:textIsSelectable="false"
-        android:layout_below="@+id/edtTxtPassword"
+        android:layout_below="@+id/edtxtPassword"
         android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Log In"
-        android:id="@+id/btnLogIn"
-        android:background="@android:color/transparent"
-        android:textSize="25dp"
-        android:nestedScrollingEnabled="false"
-        android:onClick="gotoLogIn"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:visibility="invisible" />
 
 </RelativeLayout>

@@ -18,13 +18,9 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/edttxtUsername"
-        android:layout_above="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="31dp"
-        android:layout_alignRight="@+id/button"
-        android:layout_alignEnd="@+id/button" />
+        android:id="@+id/edtxtUsername"
+        android:layout_below="@+id/txtViewUsername"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -32,9 +28,11 @@
         android:text="       Ⓤⓢⓔⓡⓝⓐⓜⓔ"
         android:id="@+id/txtViewUsername"
         android:textSize="30dp"
-        android:layout_above="@+id/edttxtUsername"
-        android:layout_centerHorizontal="true"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="55dp" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -42,9 +40,10 @@
         android:text="       Ⓟⓐⓢⓢⓦⓞⓡⓓ"
         android:id="@+id/textView"
         android:textSize="30dp"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/txtViewUsername"
-        android:layout_alignStart="@+id/txtViewUsername" />
+        android:layout_below="@+id/edtxtUsername"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="29dp" />
 
 
     <EditText
@@ -52,22 +51,26 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/edtTxtPassword"
+        android:id="@+id/edtxtPassword"
         android:layout_below="@+id/textView"
-        android:layout_marginTop="27dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/edttxtUsername"
-        android:layout_alignEnd="@+id/edttxtUsername" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="300dp"
         android:layout_height="150dp"
         android:text="Login"
-        android:id="@+id/button"
-        android:layout_below="@+id/edtTxtPassword"
+        android:id="@+id/btnLoginRed"
+        android:background="@drawable/pencil"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp"
-        android:background="@drawable/pencil" />
+        android:onClick="insertLogin" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/txtVwErrorRed"
+        android:layout_above="@+id/btnLoginRed"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
